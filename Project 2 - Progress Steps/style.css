@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+/* This is a form of defining the scope and using some variables */
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+body {
+  background-color: whitesmoke;
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.container {
+  /* Aligns all text within container to center unless overridden */
+  text-align: center;
+}
+
+.progress-container {
+  /* Makes them into a row */
+  display: flex;
+  /* Takes the remaining space n puts it in between them */
+  justify-content: space-between;
+  /* position relative to position the things in it absolute*/
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+}
+.progress-container::before {
+  content: "";
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+/* Below is the styling of a container that will act as our progress line
+This container is embedded in the larger progress container */
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  /* Height of container width of line */
+  height: 4px;
+  /* Width of container length of line */
+  width: 0%;
+  /* -1 to be behind the circles */
+  z-index: -1;
+  /* Any changes to divs with this class will have this transition */
+  transition: 0.4s ease;
+}
+.circle {
+  background-color: white;
+  color: #999;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  /* By using flex we can use align items n justify content properly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-empty);
+  transition: 0.4 ease;
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+.btn {
+  background-color: var(--line-border-fill);
+  color: #e0e0e0;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+/* Activates when button is clicked */
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+/* applied to disabled buttons */
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}
