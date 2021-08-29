@@ -28,6 +28,7 @@ h1 {
   height: 200px;
   margin: 10px;
   border-radius: 10px;
+  overflow-x: hidden;
   box-shadow: 2px 4px 5px black;
   transform: translateX(400%);
   transition: transform 0.4s ease;
