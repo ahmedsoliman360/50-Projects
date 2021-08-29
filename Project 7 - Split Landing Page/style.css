@@ -6,6 +6,7 @@
   --right-btn-color: rgba(28, 122, 28, 1);
   --hover-width: 75%;
   --other-width: 25%;
+  --speed: 1000ms;
 }
 * {
   box-sizing: border-box;
@@ -18,7 +19,7 @@ body {
   margin: 0;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   position: absolute;
   left: 50%;
   top: 20%;
@@ -51,6 +52,7 @@ h1 {
   background: #333;
 }
 .split {
+  transition: all var(--speed) ease-in-out;
   position: absolute;
   width: 50%;
   height: 100%;
@@ -101,4 +103,14 @@ h1 {
 }
 .hover-right .left {
   width: var(--other-width);
+}
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+    top: 30%;
+  }
+  .btn {
+    padding: 1.2rem;
+    width: 12rem;
+  }
 }
