@@ -5,6 +5,7 @@
 }
 
 body {
+  background-color: plum;
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
@@ -13,4 +14,21 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+.btnContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+  border: 0;
+  border-radius: 10px;
+}
+.btn {
+  width: 150px;
+  height: 70px;
+  border: 0;
+  border-radius: 5px;
+  margin: 30px;
+  font-size: 100%;
 }
